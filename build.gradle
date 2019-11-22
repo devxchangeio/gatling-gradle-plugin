@@ -1,0 +1,33 @@
+plugins {
+	id 'groovy'
+	id 'com.gradle.plugin-publish' version '0.9.5'
+}
+
+dependencies {
+	compile gradleApi()
+}
+
+apply plugin: "com.gradle.plugin-publish"
+
+jar {
+	baseName = 'perf-test-task'
+	version = '1.0.0'
+}
+
+version = "1.0.0"
+group = "io.devxchange.gatling"
+
+pluginBundle {
+	website = 'https://github.com/devxchangeio/gatling-gradle-plugin'
+	vcsUrl = 'https://github.com/devxchangeio/gatling-gradle-plugin'
+	description = 'Gradle Task for Gatling Simulation Execution'
+	tags = ['gatling', 'load test', 'stress test', 'performance test', 'scala']
+
+	plugins {
+		gatlingPlugin {
+			id = 'io.devxchange.gatling'
+			displayName = 'Gradle Task for Gatling Simulation Execution'
+		}
+	}
+
+}
